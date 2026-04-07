@@ -74,12 +74,12 @@ export const SkillsPanel = ({
             {skills.map((skill) => (
               <div
                 key={skill}
-                className="flex items-center gap-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
+                className="flex items-center gap-2 px-3 py-1 bg-brand-100 text-brand-700 rounded-full text-sm font-medium"
               >
                 {skill}
                 <button
                   onClick={() => handleRemoveSkill(skill)}
-                  className="hover:text-green-900 transition-colors ml-1"
+                  className="hover:text-brand-900 transition-colors ml-1"
                   title="Remove skill"
                 >
                   <X size={16} />
@@ -100,7 +100,7 @@ export const SkillsPanel = ({
             value={skillInput}
             onChange={(e) => setSkillInput(e.target.value)}
             onKeyDown={handleAddSkill}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
+            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm"
           />
           <button
             onClick={() => {
@@ -110,7 +110,7 @@ export const SkillsPanel = ({
                 } as React.KeyboardEvent<HTMLInputElement>);
               }
             }}
-            className="p-2 bg-green-100 hover:bg-green-200 text-green-600 rounded-lg transition-colors"
+            className="p-2 bg-brand-100 hover:bg-brand-200 text-brand-600 rounded-lg transition-colors"
             title="Add skill"
           >
             <Plus size={20} />
@@ -123,7 +123,7 @@ export const SkillsPanel = ({
         <div className="flex items-center gap-2 pt-4 border-t border-gray-200">
           <button
             onClick={handleSave}
-            className="flex-1 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors font-medium"
+            className="flex-1 px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded-lg transition-colors font-medium"
           >
             Save Changes
           </button>

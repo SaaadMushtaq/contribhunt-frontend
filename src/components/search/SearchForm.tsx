@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, Zap } from "lucide-react";
+import { ChevronDown, Zap, Info, Link2 } from "lucide-react";
 import { useSearch } from "../../hooks/useSearch";
 import { useAuth } from "../../hooks/useAuth";
 import { useGitHub } from "../../hooks/useGitHub";
@@ -54,10 +54,11 @@ export const SearchForm = () => {
     <div className="space-y-6">
       {/* Not authenticated banner */}
       {!isAuthenticated && (
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-          <p className="text-sm text-blue-900">
-            ℹ️ Login with GitHub to auto-detect your skills and save your
-            searches for later.
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start gap-3">
+          <Info size={15} className="text-blue-500 mt-0.5 shrink-0" />
+          <p className="text-sm text-blue-800 leading-relaxed">
+            Login with GitHub to auto-detect your skills and save your searches
+            for later.
           </p>
         </div>
       )}
@@ -72,9 +73,10 @@ export const SearchForm = () => {
               <button
                 onClick={detectSkills}
                 disabled={isDetecting}
-                className="text-sm px-3 py-1 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded transition-colors disabled:opacity-50"
+                className="flex items-center gap-1.5 text-sm px-3 py-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors disabled:opacity-50 font-medium"
               >
-                {isDetecting ? "Detecting..." : "🔗 Auto-detect from GitHub"}
+                <Link2 size={13} />
+                {isDetecting ? "Detecting..." : "Auto-detect from GitHub"}
               </button>
             )}
           </div>
@@ -125,7 +127,7 @@ export const SearchForm = () => {
                   value={languageInput}
                   onChange={(e) => setLanguageInput(e.target.value)}
                   onKeyDown={handleAddLanguage}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm"
                 />
                 {searchParams.languages.length > 0 && (
                   <div className="flex flex-wrap gap-2">
@@ -192,7 +194,7 @@ export const SearchForm = () => {
                         type="checkbox"
                         checked={selectedLabels.includes(label)}
                         onChange={() => toggleLabel(label)}
-                        className="w-4 h-4 text-green-500 border-gray-300 rounded focus:ring-green-500"
+                        className="w-4 h-4 text-brand-500 border-gray-300 rounded focus:ring-brand-500"
                       />
                       <span className="text-sm text-gray-700">{label}</span>
                     </label>
@@ -212,7 +214,7 @@ export const SearchForm = () => {
           className={`w-full py-3 rounded-lg font-semibold transition-all flex items-center justify-center gap-2 ${
             isSearchDisabled
               ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-              : "bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white"
+              : "bg-linear-to-r from-brand-500 to-accent-500 hover:from-brand-600 hover:to-accent-600 text-white"
           }`}
         >
           {isSearching ? (

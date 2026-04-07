@@ -104,12 +104,12 @@ export const SkillSelector = ({
           {selectedSkills.map((skill) => (
             <div
               key={skill}
-              className="flex items-center gap-2 px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium"
+              className="flex items-center gap-2 px-3 py-1 bg-brand-100 text-brand-700 rounded-full text-sm font-medium"
             >
               {skill}
               <button
                 onClick={() => removeSkill(skill)}
-                className="hover:text-green-900 transition-colors"
+                className="hover:text-brand-900 transition-colors"
               >
                 <X size={16} />
               </button>
@@ -134,7 +134,7 @@ export const SkillSelector = ({
         placeholder="Search skills..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500"
       />
 
       {/* Skills grid */}
@@ -146,7 +146,7 @@ export const SkillSelector = ({
             disabled={isMaxed && !selectedSkills.includes(skill)}
             className={`px-3 py-2 rounded-lg font-medium text-sm transition-all ${
               selectedSkills.includes(skill)
-                ? "bg-green-500 text-white"
+                ? "bg-brand-500 text-white"
                 : isMaxed && !selectedSkills.includes(skill)
                   ? "bg-gray-100 text-gray-400 cursor-not-allowed"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"

@@ -10,7 +10,7 @@ export const Footer = () => {
           {/* Branding */}
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-brand-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold">C</span>
               </div>
               <span className="font-bold text-lg text-gray-900">
@@ -31,7 +31,7 @@ export const Footer = () => {
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-gray-600 hover:text-green-500 transition-colors text-sm"
+                  className="flex items-center gap-2 text-gray-600 hover:text-brand-500 transition-colors text-sm"
                 >
                   <GitBranch size={16} />
                   GitHub
@@ -40,7 +40,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#about"
-                  className="text-gray-600 hover:text-green-500 transition-colors text-sm"
+                  className="text-gray-600 hover:text-brand-500 transition-colors text-sm"
                 >
                   About
                 </a>
@@ -64,7 +64,7 @@ export const Footer = () => {
           </p>
           <p className="flex items-center gap-1 text-sm text-gray-600">
             Made with{" "}
-            <Heart size={16} className="text-green-500 fill-green-500" /> for
+            <Heart size={16} className="text-brand-500 fill-brand-500" /> for
             open source
           </p>
         </div>

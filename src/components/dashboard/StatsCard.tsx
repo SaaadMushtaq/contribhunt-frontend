@@ -14,7 +14,7 @@ export const StatsCard = ({
   color,
 }: StatsCardProps) => {
   const colorClasses: Record<string, string> = {
-    green: "text-green-600 bg-green-50",
+    green: "text-brand-600 bg-brand-50",
     blue: "text-blue-600 bg-blue-50",
     purple: "text-purple-600 bg-purple-50",
     red: "text-red-600 bg-red-50",

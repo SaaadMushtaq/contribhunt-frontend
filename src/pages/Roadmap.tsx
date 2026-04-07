@@ -26,7 +26,7 @@ export const Roadmap = () => {
           </p>
           <Link
             to="/search"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-lg transition-all"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-linear-to-r from-brand-500 to-accent-500 hover:from-brand-600 hover:to-accent-600 text-white font-semibold rounded-lg transition-all"
           >
             <Search size={18} />
             Go to Search

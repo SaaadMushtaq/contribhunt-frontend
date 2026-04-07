@@ -50,7 +50,7 @@ export const SavedSearches = ({
                 {search.params.skills.slice(0, 3).map((skill) => (
                   <span
                     key={skill}
-                    className="inline-block px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium"
+                    className="inline-block px-2 py-1 bg-brand-100 text-brand-700 rounded text-xs font-medium"
                   >
                     {skill}
                   </span>
@@ -76,7 +76,7 @@ export const SavedSearches = ({
             <div className="flex items-center gap-2 shrink-0">
               <button
                 onClick={() => onLoad(search.params)}
-                className="p-2 bg-green-50 hover:bg-green-100 text-green-600 rounded-lg transition-colors"
+                className="p-2 bg-brand-50 hover:bg-brand-100 text-brand-600 rounded-lg transition-colors"
                 title="Load this search"
               >
                 <Play size={16} />

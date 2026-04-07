@@ -4,7 +4,7 @@ import { Menu, X, LogOut, LayoutDashboard, GitBranch } from "lucide-react";
 import { useAuth } from "../../hooks/useAuth";
 
 export const Navbar = () => {
-  const { user, isAuthenticated, login, logout } = useAuth();
+  const { user, isAuthenticated, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -17,31 +17,26 @@ export const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center gap-2 shrink-0">
-              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">C</span>
-              </div>
-              <span className="hidden sm:inline font-bold text-lg text-gray-900">
-                ContribHunt
-              </span>
+              <img className="h-16 object-cover" src="/logo.png" alt="logo" />
             </Link>
 
             <div className="hidden md:flex items-center gap-6">
               <Link
                 to="/"
-                className="text-gray-700 hover:text-green-500 transition-colors font-medium"
+                className="text-gray-700 hover:text-brand-500 transition-colors font-medium"
               >
                 Home
               </Link>
               <Link
                 to="/search"
-                className="text-gray-700 hover:text-green-500 transition-colors font-medium"
+                className="text-gray-700 hover:text-brand-500 transition-colors font-medium"
               >
                 Search
               </Link>
               {isAuthenticated && (
                 <Link
                   to="/dashboard"
-                  className="text-gray-700 hover:text-green-500 transition-colors font-medium"
+                  className="text-gray-700 hover:text-brand-500 transition-colors font-medium"
                 >
                   Dashboard
                 </Link>
@@ -53,13 +48,13 @@ export const Navbar = () => {
             {/* Desktop auth */}
             <div className="hidden md:flex items-center gap-4">
               {!isAuthenticated ? (
-                <button
-                  onClick={login}
-                  className="flex items-center gap-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors font-medium"
+                <Link
+                  to="/login"
+                  className="flex items-center gap-2 px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded-lg transition-colors font-medium"
                 >
                   <GitBranch size={18} />
                   Login
-                </button>
+                </Link>
               ) : (
                 <div className="relative">
                   {/* User avatar and dropdown */}
@@ -144,16 +139,14 @@ export const Navbar = () => {
             {/* Mobile auth */}
             <div className="border-t border-gray-200 pt-4">
               {!isAuthenticated ? (
-                <button
-                  onClick={() => {
-                    login();
-                    setIsMenuOpen(false);
-                  }}
-                  className="w-full flex items-center gap-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors font-medium justify-center"
+                <Link
+                  to="/login"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-full flex items-center gap-2 px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded-lg transition-colors font-medium justify-center"
                 >
                   <GitBranch size={18} />
                   Login with GitHub
-                </button>
+                </Link>
               ) : (
                 <>
                   <div className="px-4 py-2 flex items-center gap-2 mb-2">

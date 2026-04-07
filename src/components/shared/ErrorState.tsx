@@ -18,7 +18,7 @@ export const ErrorState = ({ message, onRetry }: ErrorStateProps) => {
       {onRetry && (
         <button
           onClick={onRetry}
-          className="mt-4 px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors font-medium"
+          className="mt-4 px-6 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded-lg transition-colors font-medium"
         >
           Retry
         </button>

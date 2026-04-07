@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { SearchX } from "lucide-react";
 import { type RankedIssue } from "../../types";
 import IssueCard from "./IssueCard";
 import SkeletonCard from "./SkeletonCard";
@@ -58,12 +59,14 @@ export const IssueList = ({ issues, isLoading, onTrack }: IssueListProps) => {
 
   if (issues.length === 0) {
     return (
-      <div className="bg-white border border-gray-200 rounded-lg p-12 text-center">
-        <div className="text-5xl mb-4">🔍</div>
+      <div className="bg-white border border-gray-200 rounded-xl p-14 text-center shadow-sm">
+        <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+          <SearchX size={30} className="text-gray-400" />
+        </div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
           No issues found
         </h3>
-        <p className="text-gray-600">
+        <p className="text-gray-500 max-w-xs mx-auto">
           Try adjusting your skills, experience level, or filters.
         </p>
       </div>
@@ -75,7 +78,7 @@ export const IssueList = ({ issues, isLoading, onTrack }: IssueListProps) => {
       {/* Result count and sort */}
       <div className="flex items-center justify-between flex-wrap gap-4">
         <p className="text-lg font-semibold text-gray-900">
-          Found <span className="text-green-600">{sortedIssues.length}</span>{" "}
+          Found <span className="text-brand-600">{sortedIssues.length}</span>{" "}
           matching issues
         </p>
 
@@ -85,7 +88,7 @@ export const IssueList = ({ issues, isLoading, onTrack }: IssueListProps) => {
             setSortBy(e.target.value as SortOption);
             setCurrentPage(1);
           }}
-          className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm font-medium bg-white"
+          className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm font-medium bg-white"
         >
           <option value="match">Sort by Match Score</option>
           <option value="merge">Sort by Merge Chance</option>
@@ -137,7 +140,7 @@ export const IssueList = ({ issues, isLoading, onTrack }: IssueListProps) => {
                 onClick={() => setCurrentPage(page)}
                 className={`w-10 h-10 rounded-lg font-medium transition-colors ${
                   currentPage === page
-                    ? "bg-green-500 text-white"
+                    ? "bg-brand-500 text-white"
                     : "border border-gray-300 hover:bg-gray-50"
                 }`}
               >

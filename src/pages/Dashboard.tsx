@@ -134,13 +134,13 @@ export const Dashboard = () => {
             <img
               src={user.avatar_url}
               alt={user.username}
-              className="w-20 h-20 rounded-full object-cover border-4 border-green-100"
+              className="w-20 h-20 rounded-full object-cover border-4 border-brand-100"
             />
           )}
           <div>
             <h1 className="text-2xl font-bold text-gray-900">
               Welcome back,{" "}
-              <span className="text-green-600">{user?.username}</span>!
+              <span className="text-brand-600">{user?.username}</span>!
             </h1>
             {user?.created_at && (
               <p className="text-gray-500 text-sm mt-1">

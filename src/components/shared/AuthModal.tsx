@@ -47,7 +47,7 @@ export const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
             <div className="mb-8 space-y-3">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-1.5 shrink-0" />
+                  <div className="w-1.5 h-1.5 bg-brand-500 rounded-full mt-1.5 shrink-0" />
                   <p className="text-sm text-gray-700">{benefit}</p>
                 </div>
               ))}

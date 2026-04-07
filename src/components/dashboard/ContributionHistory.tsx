@@ -17,7 +17,7 @@ type FilterStatus =
 const STATUS_COLORS: Record<string, string> = {
   interested: "bg-gray-100 text-gray-800",
   "in-progress": "bg-blue-100 text-blue-800",
-  completed: "bg-green-100 text-green-800",
+  completed: "bg-brand-100 text-brand-800",
   abandoned: "bg-red-100 text-red-800",
 };
 
@@ -77,7 +77,7 @@ export const ContributionHistory = ({
             onClick={() => setSelectedFilter(filter)}
             className={`px-4 py-2 rounded-lg whitespace-nowrap font-medium transition-colors ${
               selectedFilter === filter
-                ? "bg-green-500 text-white"
+                ? "bg-brand-500 text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
           >
@@ -110,7 +110,7 @@ export const ContributionHistory = ({
                     href={item.issue_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-gray-900 font-semibold hover:text-green-600 transition-colors mb-2"
+                    className="inline-flex items-center gap-2 text-gray-900 font-semibold hover:text-brand-600 transition-colors mb-2"
                   >
                     {item.issue_title}
                     <ExternalLink size={14} />
@@ -122,7 +122,7 @@ export const ContributionHistory = ({
                       href={item.repo_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-green-600 transition-colors"
+                      className="hover:text-brand-600 transition-colors"
                     >
                       {item.repo_name}
                     </a>

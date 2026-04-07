@@ -23,7 +23,7 @@ export const LoadingState = ({
     <div className="flex flex-col items-center justify-center gap-4 py-12">
       {/* Animated spinner */}
       <div
-        className={`${sizeClasses[size]} border-4 border-gray-200 border-t-green-500 rounded-full animate-spin`}
+        className={`${sizeClasses[size]} border-4 border-gray-200 border-t-brand-500 rounded-full animate-spin`}
       />
 
       {/* Message */}

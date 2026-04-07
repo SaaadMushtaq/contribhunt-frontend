@@ -11,7 +11,7 @@ export interface IssueCardProps {
 const LANGUAGE_COLORS: Record<string, string> = {
   javascript: "bg-yellow-100 text-yellow-800",
   typescript: "bg-blue-100 text-blue-800",
-  python: "bg-green-100 text-green-800",
+  python: "bg-brand-100 text-brand-800",
   java: "bg-red-100 text-red-800",
   cpp: "bg-purple-100 text-purple-800",
   csharp: "bg-purple-100 text-purple-800",
@@ -26,7 +26,7 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
   const [isTrackMenuOpen, setIsTrackMenuOpen] = useState(false);
 
   const getDifficultyColor = (score: number) => {
-    if (score < 30) return "text-green-600";
+    if (score < 30) return "text-brand-600";
     if (score < 60) return "text-yellow-600";
     return "text-red-600";
   };
@@ -77,7 +77,7 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
         href={issue.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="block text-lg font-semibold text-gray-900 hover:text-green-600 transition-colors mb-3 line-clamp-2"
+        className="block text-lg font-semibold text-gray-900 hover:text-brand-600 transition-colors mb-3 line-clamp-2"
       >
         {issue.title}
       </a>
@@ -124,7 +124,7 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
                 cy="25"
                 r="20"
                 fill="none"
-                stroke="#22c55e"
+                stroke="#eb6538"
                 strokeWidth="3"
                 strokeDasharray={`${(issue.matchScore / 100) * 126} 126`}
               />
@@ -179,7 +179,7 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
           {/* Reasons to apply */}
           {issue.reasonsToApply.length > 0 && (
             <div>
-              <p className="text-sm font-medium text-green-700 mb-1">
+              <p className="text-sm font-medium text-brand-700 mb-1">
                 ✅ Reasons to Apply:
               </p>
               <ul className="text-sm text-gray-700 space-y-1 list-none">
@@ -226,7 +226,7 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
           <div className="relative">
             <button
               onClick={() => setIsTrackMenuOpen(!isTrackMenuOpen)}
-              className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors font-medium flex items-center gap-1"
+              className="px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white rounded-lg transition-colors font-medium flex items-center gap-1"
             >
               Track
               <ChevronDown size={16} />

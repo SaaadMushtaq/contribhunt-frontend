@@ -4,7 +4,7 @@ import { Zap, Map, BarChart3, ArrowRight, GitBranch } from "lucide-react";
 import { useAuth } from "../hooks/useAuth";
 
 export const Home = () => {
-  const { isAuthenticated, login } = useAuth();
+  const { isAuthenticated } = useAuth();
 
   const features = [
     {
@@ -50,7 +50,7 @@ export const Home = () => {
   return (
     <div className="w-full">
       {/* Hero section */}
-      <section className="min-h-screen bg-linear-to-br from-green-50 to-blue-50 flex items-center py-20 px-4 sm:px-6 lg:px-8">
+      <section className="min-h-screen bg-linear-to-br from-brand-50 to-accent-50 flex items-center py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left side - Text */}
@@ -73,24 +73,23 @@ export const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
                 <Link
                   to="/search"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-linear-to-r from-brand-500 to-accent-500 hover:from-brand-600 hover:to-accent-600 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl"
                 >
                   Start Searching
                   <ArrowRight size={20} />
                 </Link>
 
-                <button
-                  onClick={login}
-                  disabled={isAuthenticated}
+                <Link
+                  to="/login"
                   className={`inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-gray-900 rounded-lg font-semibold transition-all ${
                     isAuthenticated
-                      ? "bg-gray-900 text-white opacity-50 cursor-not-allowed"
+                      ? "bg-gray-900 text-white opacity-50 cursor-not-allowed pointer-events-none"
                       : "bg-white text-gray-900 hover:bg-gray-900 hover:text-white"
                   }`}
                 >
                   <GitBranch size={20} />
                   {isAuthenticated ? "Already Connected" : "Login with GitHub"}
-                </button>
+                </Link>
               </div>
 
               {/* Stats bar */}
@@ -111,7 +110,7 @@ export const Home = () => {
               <div className="relative w-full max-w-md h-96">
                 {/* Animated background circles */}
                 <motion.div
-                  className="absolute inset-0 bg-linear-to-br from-green-200 to-blue-200 rounded-3xl opacity-20"
+                  className="absolute inset-0 bg-linear-to-br from-brand-200 to-accent-200 rounded-3xl opacity-20"
                   animate={{
                     scale: [1, 1.05, 1],
                   }}
@@ -123,7 +122,7 @@ export const Home = () => {
 
                 {/* Code bracket animation */}
                 <motion.div
-                  className="absolute top-20 left-10 text-6xl font-bold text-green-500 opacity-30"
+                  className="absolute top-20 left-10 text-6xl font-bold text-brand-500 opacity-30"
                   animate={{
                     y: [0, -10, 0],
                   }}
@@ -169,7 +168,7 @@ export const Home = () => {
                 </motion.div>
 
                 {/* Decorative dots */}
-                <motion.div className="absolute top-10 right-20 w-4 h-4 bg-green-500 rounded-full opacity-60" />
+                <motion.div className="absolute top-10 right-20 w-4 h-4 bg-brand-500 rounded-full opacity-60" />
                 <motion.div className="absolute bottom-32 left-20 w-3 h-3 bg-blue-500 rounded-full opacity-60" />
               </div>
             </motion.div>
@@ -207,7 +206,7 @@ export const Home = () => {
                   viewport={{ once: true }}
                   className="bg-linear-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center mb-4">
                     <Icon size={24} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -224,7 +223,7 @@ export const Home = () => {
       </section>
 
       {/* How it works section */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-blue-50 to-green-50">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-accent-50 to-brand-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -253,12 +252,12 @@ export const Home = () => {
               >
                 {/* Connector line */}
                 {idx < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-20 left-[calc(100%)] w-full h-1 bg-linear-to-r from-green-400 to-transparent" />
+                  <div className="hidden md:block absolute top-20 left-[calc(100%)] w-full h-1 bg-linear-to-r from-brand-400 to-transparent" />
                 )}
 
                 <div className="bg-white border border-gray-200 rounded-lg p-8 h-full">
                   {/* Step number */}
-                  <div className="w-12 h-12 bg-linear-to-br from-green-500 to-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                  <div className="w-12 h-12 bg-linear-to-br from-brand-500 to-accent-500 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
                     {step.number}
                   </div>
 
@@ -283,7 +282,7 @@ export const Home = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-linear-to-r from-green-500 to-blue-500 rounded-lg p-12 text-center text-white shadow-xl"
+            className="bg-linear-to-r from-brand-500 to-accent-500 rounded-lg p-12 text-center text-white shadow-xl"
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Ready to contribute?
@@ -295,7 +294,7 @@ export const Home = () => {
 
             <Link
               to="/search"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-green-600 hover:bg-gray-100 font-semibold rounded-lg transition-all"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-600 hover:bg-gray-100 font-semibold rounded-lg transition-all"
             >
               Start Your Journey
               <ArrowRight size={20} />

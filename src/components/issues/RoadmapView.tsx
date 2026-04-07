@@ -24,7 +24,7 @@ const PHASES: Phase[] = [
     id: "start",
     name: "Start Here",
     description: "Perfect for beginners. Build confidence with easy issues.",
-    color: "green",
+    color: "brand",
     minDifficulty: 0,
     maxDifficulty: 30,
     icon: "🚀",
@@ -51,29 +51,29 @@ const PHASES: Phase[] = [
 
 const getPhaseColor = (color: string) => {
   const colors: Record<string, string> = {
-    green: "bg-green-50 border-green-200",
+    brand: "bg-brand-50 border-brand-200",
     blue: "bg-blue-50 border-blue-200",
     purple: "bg-purple-50 border-purple-200",
   };
-  return colors[color] || colors.green;
+  return colors[color] || colors.brand;
 };
 
 const getPhaseHeaderColor = (color: string) => {
   const colors: Record<string, string> = {
-    green: "bg-green-500 text-white",
+    brand: "bg-brand-500 text-white",
     blue: "bg-blue-500 text-white",
     purple: "bg-purple-500 text-white",
   };
-  return colors[color] || colors.green;
+  return colors[color] || colors.brand;
 };
 
 const getTimelineColor = (color: string) => {
   const colors: Record<string, string> = {
-    green: "bg-green-500",
+    brand: "bg-brand-500",
     blue: "bg-blue-500",
     purple: "bg-purple-500",
   };
-  return colors[color] || colors.green;
+  return colors[color] || colors.brand;
 };
 
 export const RoadmapView = ({

@@ -38,7 +38,7 @@ export const ExperienceDropdown = ({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value as ExperienceLevel)}
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white font-medium"
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white font-medium"
       >
         {EXPERIENCE_OPTIONS.map((option) => (
           <option key={option.value} value={option.value}>
