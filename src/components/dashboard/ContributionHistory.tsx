@@ -61,7 +61,6 @@ export const ContributionHistory = ({
 
   return (
     <div className="space-y-4">
-      {/* Filter tabs */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2">
         {(
           [
@@ -90,7 +89,6 @@ export const ContributionHistory = ({
         ))}
       </div>
 
-      {/* Issues list */}
       <div className="space-y-3">
         {filteredHistory.length === 0 ? (
           <div className="bg-white border border-gray-200 rounded-lg p-8 text-center">
@@ -103,9 +101,7 @@ export const ContributionHistory = ({
               className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
             >
               <div className="flex items-start justify-between gap-4 flex-wrap">
-                {/* Issue details */}
                 <div className="flex-1 min-w-0">
-                  {/* Title */}
                   <a
                     href={item.issue_url}
                     target="_blank"
@@ -116,7 +112,6 @@ export const ContributionHistory = ({
                     <ExternalLink size={14} />
                   </a>
 
-                  {/* Repository and language */}
                   <div className="flex items-center gap-2 text-sm text-gray-600 mb-2 flex-wrap">
                     <a
                       href={item.repo_url}
@@ -136,22 +131,18 @@ export const ContributionHistory = ({
                     )}
                   </div>
 
-                  {/* Dates */}
                   <p className="text-xs text-gray-500">
                     Tracked {formatDate(item.created_at)}
                   </p>
                 </div>
 
-                {/* Status and actions */}
                 <div className="flex items-center gap-2 shrink-0">
-                  {/* Status badge */}
                   <span
                     className={`px-3 py-1 rounded-full text-sm font-medium whitespace-nowrap ${STATUS_COLORS[item.status]}`}
                   >
                     {STATUS_LABELS[item.status]}
                   </span>
 
-                  {/* Status update dropdown */}
                   <div className="relative">
                     <button
                       onClick={() =>
@@ -196,7 +187,6 @@ export const ContributionHistory = ({
         )}
       </div>
 
-      {/* Summary */}
       {history.length > 0 && (
         <div className="text-xs text-gray-600 pt-4 border-t border-gray-200">
           Total: {history.length} issues tracked | Completed:{" "}

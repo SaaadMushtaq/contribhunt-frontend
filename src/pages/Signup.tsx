@@ -52,21 +52,18 @@ export const Signup = () => {
   const { login, isAuthenticated, isLoading } = useAuth();
   const navigate = useNavigate();
 
-  // Redirect already-authenticated users
   useEffect(() => {
     if (isAuthenticated) navigate("/dashboard", { replace: true });
   }, [isAuthenticated, navigate]);
 
   return (
     <div className="min-h-screen flex">
-      {/* ── Left panel – action ───────────────────────── */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.55 }}
         className="flex-1 flex flex-col items-center justify-center px-6 py-12 bg-white"
       >
-        {/* Mobile logo */}
         <div className="lg:hidden mb-8">
           <Link to="/">
             <img src="/logo.png" alt="ContribHunt" className="h-10 mx-auto" />
@@ -74,7 +71,6 @@ export const Signup = () => {
         </div>
 
         <div className="w-full max-w-md space-y-8">
-          {/* Heading */}
           <div className="space-y-2">
             <h1 className="text-3xl font-bold text-gray-900">
               Create your account
@@ -84,7 +80,6 @@ export const Signup = () => {
             </p>
           </div>
 
-          {/* How it works */}
           <div className="space-y-4">
             {STEPS.map(({ step, title, desc }) => (
               <div key={step} className="flex gap-4">
@@ -101,7 +96,6 @@ export const Signup = () => {
             ))}
           </div>
 
-          {/* Divider */}
           <div className="flex items-center gap-4">
             <div className="flex-1 h-px bg-gray-100" />
             <span className="text-xs text-gray-400 uppercase tracking-wider">
@@ -110,7 +104,6 @@ export const Signup = () => {
             <div className="flex-1 h-px bg-gray-100" />
           </div>
 
-          {/* GitHub button */}
           <div className="space-y-4">
             <button
               onClick={login}
@@ -134,7 +127,6 @@ export const Signup = () => {
             </Link>
           </div>
 
-          {/* Switch to login */}
           <p className="text-center text-sm text-gray-500">
             Already have an account?{" "}
             <Link
@@ -145,7 +137,6 @@ export const Signup = () => {
             </Link>
           </p>
 
-          {/* Terms note */}
           <p className="text-xs text-gray-400 text-center leading-relaxed">
             By continuing you agree to our{" "}
             <span className="underline cursor-pointer hover:text-gray-600">
@@ -160,26 +151,22 @@ export const Signup = () => {
         </div>
       </motion.div>
 
-      {/* ── Right panel – branding ────────────────────── */}
       <motion.div
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.55, delay: 0.1 }}
         className="hidden lg:flex lg:w-1/2 bg-linear-to-br from-accent-600 to-brand-500 text-white flex-col justify-between p-12 relative overflow-hidden"
       >
-        {/* Background decorations */}
         <div className="absolute -top-20 -right-20 w-80 h-80 bg-white/5 rounded-full" />
         <div className="absolute top-1/3 -left-12 w-48 h-48 bg-white/5 rounded-full" />
         <div className="absolute -bottom-16 right-1/4 w-64 h-64 bg-white/5 rounded-full" />
 
-        {/* Logo */}
         <div className="relative z-10">
           <Link to="/" className="inline-flex items-center gap-3">
             <img src="/logo.png" alt="ContribHunt" className="h-10" />
           </Link>
         </div>
 
-        {/* Main content */}
         <div className="relative z-10 space-y-8">
           <div className="space-y-4">
             <h2 className="text-4xl font-bold leading-tight">
@@ -191,7 +178,6 @@ export const Signup = () => {
             </p>
           </div>
 
-          {/* Stats grid */}
           <div className="grid grid-cols-2 gap-4">
             {HIGHLIGHTS.map(({ icon: Icon, label }) => (
               <div
@@ -206,7 +192,6 @@ export const Signup = () => {
             ))}
           </div>
 
-          {/* Testimonial-style quote */}
           <blockquote className="border-l-2 border-white/30 pl-5 space-y-1">
             <p className="text-white/90 italic leading-relaxed">
               "Found my first merged PR within a week. The skill matching is
@@ -218,7 +203,6 @@ export const Signup = () => {
           </blockquote>
         </div>
 
-        {/* Bottom note */}
         <p className="relative z-10 text-white/50 text-sm">
           © {new Date().getFullYear()} ContribHunt — 100% free, forever.
         </p>

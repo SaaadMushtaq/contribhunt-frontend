@@ -8,13 +8,10 @@ export interface ErrorStateProps {
 export const ErrorState = ({ message, onRetry }: ErrorStateProps) => {
   return (
     <div className="flex flex-col items-center justify-center gap-4 py-12">
-      {/* Error icon */}
       <AlertCircle size={48} className="text-red-500" />
 
-      {/* Error message */}
       <p className="text-center text-red-600 max-w-md">{message}</p>
 
-      {/* Retry button */}
       {onRetry && (
         <button
           onClick={onRetry}

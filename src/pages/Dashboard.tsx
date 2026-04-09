@@ -23,14 +23,12 @@ export const Dashboard = () => {
   const [isFetching, setIsFetching] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Redirect if not authenticated
   useEffect(() => {
     if (!authLoading && !isAuthenticated) {
       navigate("/");
     }
   }, [isAuthenticated, authLoading, navigate]);
 
-  // Fetch dashboard data
   useEffect(() => {
     if (!isAuthenticated) return;
 
@@ -128,7 +126,6 @@ export const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        {/* Welcome header */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 flex items-center gap-6">
           {user?.avatar_url && (
             <img
@@ -150,7 +147,6 @@ export const Dashboard = () => {
           </div>
         </div>
 
-        {/* Stats row */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <StatsCard
             label="Issues Tracked"
@@ -178,9 +174,7 @@ export const Dashboard = () => {
           />
         </div>
 
-        {/* Main grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left column */}
           <div className="space-y-8">
             <div>
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
@@ -206,7 +200,6 @@ export const Dashboard = () => {
             </div>
           </div>
 
-          {/* Right column */}
           <div>
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
               Contribution History

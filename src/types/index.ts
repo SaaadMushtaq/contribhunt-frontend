@@ -1,7 +1,5 @@
-// Experience levels for contributors
 export type ExperienceLevel = "junior" | "mid" | "senior";
 
-// User interface
 export interface User {
   id: string;
   github_id: string;
@@ -13,7 +11,6 @@ export interface User {
   created_at: string;
 }
 
-// GitHub API types
 export interface GitHubLabel {
   id: number;
   name: string;
@@ -50,7 +47,6 @@ export interface GitHubIssue {
   };
 }
 
-// Ranked issue with scoring metrics
 export interface RankedIssue extends GitHubIssue {
   mergeabilityScore: number;
   difficultyScore: number;
@@ -60,7 +56,6 @@ export interface RankedIssue extends GitHubIssue {
   reasonsToAvoid: string[];
 }
 
-// Search parameters
 export interface SearchParams {
   skills: string[];
   experienceLevel: ExperienceLevel;
@@ -70,7 +65,6 @@ export interface SearchParams {
   maxStars: number;
 }
 
-// Saved search
 export interface SavedSearch {
   id: string;
   user_id: string;
@@ -79,7 +73,6 @@ export interface SavedSearch {
   created_at: string;
 }
 
-// Contribution history
 export interface ContributionHistory {
   id: string;
   user_id: string;
@@ -93,7 +86,6 @@ export interface ContributionHistory {
   updated_at: string;
 }
 
-// Dashboard data
 export interface DashboardData {
   savedSearches: SavedSearch[];
   contributionHistory: ContributionHistory[];
@@ -106,7 +98,6 @@ export interface DashboardData {
   };
 }
 
-// Generic API response
 export interface ApiResponse<T> {
   data: T;
   error: string | null;

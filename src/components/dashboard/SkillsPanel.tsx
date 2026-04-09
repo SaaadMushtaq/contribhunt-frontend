@@ -64,7 +64,6 @@ export const SkillsPanel = ({
         </button>
       </div>
 
-      {/* Current skills */}
       {skills.length > 0 && (
         <div className="space-y-2">
           <p className="text-sm text-gray-600 font-medium">
@@ -90,7 +89,6 @@ export const SkillsPanel = ({
         </div>
       )}
 
-      {/* Add new skill */}
       <div className="space-y-2">
         <label className="text-sm font-medium text-gray-700">Add Skill</label>
         <div className="flex items-center gap-2">
@@ -118,7 +116,6 @@ export const SkillsPanel = ({
         </div>
       </div>
 
-      {/* Action buttons */}
       {hasChanges && (
         <div className="flex items-center gap-2 pt-4 border-t border-gray-200">
           <button

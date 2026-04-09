@@ -47,7 +47,6 @@ export const ExperienceDropdown = ({
         ))}
       </select>
 
-      {/* Description */}
       {selectedOption && (
         <p className="text-sm text-gray-600">{selectedOption.description}</p>
       )}

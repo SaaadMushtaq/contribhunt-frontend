@@ -21,7 +21,6 @@ import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { useAuth } from "./hooks/useAuth";
 
-// Handles GitHub OAuth redirect
 const AuthCallback = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -50,10 +49,8 @@ const AuthCallback = () => {
   );
 };
 
-// Pages that get the full-bleed auth layout (no Navbar/Footer)
 const AUTH_ROUTES = ["/login", "/signup"];
 
-// App shell with auth initialization
 const AppShell = () => {
   const { initializeAuth } = useAuth();
   const { pathname } = useLocation();

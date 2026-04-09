@@ -52,7 +52,6 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
       whileHover={{ y: -4 }}
       className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
     >
-      {/* Header row - Repo and stars */}
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-2">
           <span className="font-semibold text-gray-900">
@@ -72,7 +71,6 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
         </div>
       </div>
 
-      {/* Title - linked */}
       <a
         href={issue.url}
         target="_blank"
@@ -82,7 +80,6 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
         {issue.title}
       </a>
 
-      {/* Labels */}
       {issue.labels.length > 0 && (
         <div className="flex flex-wrap gap-2 mb-4">
           {issue.labels.slice(0, 3).map((label) => (
@@ -102,9 +99,7 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
         </div>
       )}
 
-      {/* Scores grid */}
       <div className="grid grid-cols-3 gap-4 mb-4 py-4 border-y border-gray-200">
-        {/* Match Score */}
         <div className="flex flex-col items-center">
           <div className="relative w-12 h-12 flex items-center justify-center">
             <svg
@@ -136,7 +131,6 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
           <p className="text-xs text-gray-600 mt-1 font-medium">Match</p>
         </div>
 
-        {/* Merge Chance */}
         <div className="flex flex-col items-center justify-center">
           <div className="text-2xl font-bold text-blue-600">
             {Math.round(issue.mergeabilityScore)}%
@@ -144,7 +138,6 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
           <p className="text-xs text-gray-600 font-medium">Merge</p>
         </div>
 
-        {/* Difficulty */}
         <div className="flex flex-col items-center justify-center">
           <div
             className={`text-2xl font-bold ${getDifficultyColor(issue.difficultyScore)}`}
@@ -155,14 +148,12 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
         </div>
       </div>
 
-      {/* Estimated time */}
       <div className="mb-4">
         <span className="inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium">
           ⏱ {issue.estimatedTime}
         </span>
       </div>
 
-      {/* Reasons section */}
       <button
         onClick={() => setIsReasonsOpen(!isReasonsOpen)}
         className="w-full flex items-center justify-between px-3 py-2 hover:bg-gray-50 rounded transition-colors mb-4"
@@ -176,7 +167,6 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
 
       {isReasonsOpen && (
         <div className="space-y-3 mb-4 pb-4 border-b border-gray-200">
-          {/* Reasons to apply */}
           {issue.reasonsToApply.length > 0 && (
             <div>
               <p className="text-sm font-medium text-brand-700 mb-1">
@@ -192,7 +182,6 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
             </div>
           )}
 
-          {/* Reasons to avoid */}
           {issue.reasonsToAvoid.length > 0 && (
             <div>
               <p className="text-sm font-medium text-amber-700 mb-1">
@@ -210,7 +199,6 @@ export const IssueCard = ({ issue, onTrack }: IssueCardProps) => {
         </div>
       )}
 
-      {/* Footer actions */}
       <div className="flex items-center gap-2">
         <a
           href={issue.url}

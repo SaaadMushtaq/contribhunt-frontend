@@ -19,7 +19,6 @@ export const IssueList = ({ issues, isLoading, onTrack }: IssueListProps) => {
   const [sortBy, setSortBy] = useState<SortOption>("match");
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Sort issues
   const sortedIssues = [...issues].sort((a, b) => {
     switch (sortBy) {
       case "match":
@@ -37,15 +36,12 @@ export const IssueList = ({ issues, isLoading, onTrack }: IssueListProps) => {
     }
   });
 
-  // Pagination
   const totalPages = Math.ceil(sortedIssues.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginatedIssues = sortedIssues.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE,
   );
-
-  // Loading skeleton card
 
   if (isLoading) {
     return (
@@ -75,7 +71,6 @@ export const IssueList = ({ issues, isLoading, onTrack }: IssueListProps) => {
 
   return (
     <div className="space-y-6">
-      {/* Result count and sort */}
       <div className="flex items-center justify-between flex-wrap gap-4">
         <p className="text-lg font-semibold text-gray-900">
           Found <span className="text-brand-600">{sortedIssues.length}</span>{" "}
@@ -97,7 +92,6 @@ export const IssueList = ({ issues, isLoading, onTrack }: IssueListProps) => {
         </select>
       </div>
 
-      {/* Issue cards */}
       <motion.div
         initial="hidden"
         animate="visible"
@@ -122,7 +116,6 @@ export const IssueList = ({ issues, isLoading, onTrack }: IssueListProps) => {
         ))}
       </motion.div>
 
-      {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex items-center justify-center gap-2 py-4">
           <button

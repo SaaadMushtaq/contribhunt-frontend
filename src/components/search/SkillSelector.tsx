@@ -98,7 +98,6 @@ export const SkillSelector = ({
 
   return (
     <div className="space-y-4">
-      {/* Selected skills */}
       {selectedSkills.length > 0 && (
         <div className="flex flex-wrap gap-2">
           {selectedSkills.map((skill) => (
@@ -118,7 +117,6 @@ export const SkillSelector = ({
         </div>
       )}
 
-      {/* Selected count badge */}
       <div className="flex items-center justify-between">
         <p className="text-sm text-gray-600">
           {selectedSkills.length} / 10 skills selected
@@ -128,7 +126,6 @@ export const SkillSelector = ({
         )}
       </div>
 
-      {/* Search input */}
       <input
         type="text"
         placeholder="Search skills..."
@@ -137,7 +134,6 @@ export const SkillSelector = ({
         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500"
       />
 
-      {/* Skills grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 max-h-64 overflow-y-auto">
         {filteredSkills.map((skill) => (
           <button

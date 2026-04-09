@@ -26,7 +26,6 @@ export const useAuth = () => {
       navigate("/");
     } catch (error) {
       console.error("Failed to logout:", error);
-      // Clear locally even if API call fails
       clearUser();
       localStorage.removeItem("contribhunt_token");
       navigate("/");

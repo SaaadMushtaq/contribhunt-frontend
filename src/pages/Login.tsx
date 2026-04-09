@@ -38,32 +38,27 @@ export const Login = () => {
   const { login, isAuthenticated, isLoading } = useAuth();
   const navigate = useNavigate();
 
-  // Redirect already-authenticated users
   useEffect(() => {
     if (isAuthenticated) navigate("/dashboard", { replace: true });
   }, [isAuthenticated, navigate]);
 
   return (
     <div className="min-h-screen flex">
-      {/* ── Left panel – branding ─────────────────────── */}
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.55 }}
         className="hidden lg:flex lg:w-1/2 bg-linear-to-br from-brand-500 to-accent-600 text-white flex-col justify-between p-12 relative overflow-hidden"
       >
-        {/* Background decorations */}
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/5 rounded-full" />
         <div className="absolute -bottom-16 -right-16 w-72 h-72 bg-white/5 rounded-full" />
 
-        {/* Logo */}
         <div className="relative z-10">
           <Link to="/" className="inline-flex items-center gap-3">
             <img src="/logo.png" alt="ContribHunt" className="h-10" />
           </Link>
         </div>
 
-        {/* Tagline */}
         <div className="relative z-10 space-y-6">
           <h2 className="text-4xl font-bold leading-tight">
             The smarter way to contribute to open source
@@ -88,20 +83,17 @@ export const Login = () => {
           </ul>
         </div>
 
-        {/* Bottom note */}
         <p className="relative z-10 text-white/50 text-sm">
           © {new Date().getFullYear()} ContribHunt — 100% free, forever.
         </p>
       </motion.div>
 
-      {/* ── Right panel – action ──────────────────────── */}
       <motion.div
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.55, delay: 0.1 }}
         className="flex-1 flex flex-col items-center justify-center px-6 py-12 bg-white"
       >
-        {/* Mobile logo */}
         <div className="lg:hidden mb-8">
           <Link to="/">
             <img src="/logo.png" alt="ContribHunt" className="h-10 mx-auto" />
@@ -109,7 +101,6 @@ export const Login = () => {
         </div>
 
         <div className="w-full max-w-md space-y-8">
-          {/* Heading */}
           <div className="space-y-2">
             <h1 className="text-3xl font-bold text-gray-900">Welcome back</h1>
             <p className="text-gray-500">
@@ -117,7 +108,6 @@ export const Login = () => {
             </p>
           </div>
 
-          {/* GitHub button */}
           <div className="space-y-4">
             <button
               onClick={login}
@@ -141,7 +131,6 @@ export const Login = () => {
             </Link>
           </div>
 
-          {/* Divider */}
           <div className="flex items-center gap-4">
             <div className="flex-1 h-px bg-gray-100" />
             <span className="text-xs text-gray-400 uppercase tracking-wider">
@@ -150,7 +139,6 @@ export const Login = () => {
             <div className="flex-1 h-px bg-gray-100" />
           </div>
 
-          {/* Switch to signup */}
           <p className="text-center text-sm text-gray-500">
             Don't have an account?{" "}
             <Link
@@ -161,7 +149,6 @@ export const Login = () => {
             </Link>
           </p>
 
-          {/* Trust note */}
           <div className="rounded-xl bg-gray-50 border border-gray-100 px-5 py-4">
             <p className="text-xs text-gray-500 leading-relaxed text-center">
               We only request{" "}

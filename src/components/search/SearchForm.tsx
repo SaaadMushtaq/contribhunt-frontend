@@ -52,7 +52,6 @@ export const SearchForm = () => {
 
   return (
     <div className="space-y-6">
-      {/* Not authenticated banner */}
       {!isAuthenticated && (
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start gap-3">
           <Info size={15} className="text-blue-500 mt-0.5 shrink-0" />
@@ -63,9 +62,7 @@ export const SearchForm = () => {
         </div>
       )}
 
-      {/* Main card */}
       <div className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm space-y-6">
-        {/* Section 1: Your Skills */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold text-gray-900">Your Skills</h3>
@@ -88,7 +85,6 @@ export const SearchForm = () => {
 
         <hr className="border-gray-200" />
 
-        {/* Section 2: Experience Level */}
         <div className="space-y-3">
           <h3 className="text-lg font-semibold text-gray-900">
             Experience Level
@@ -101,7 +97,6 @@ export const SearchForm = () => {
 
         <hr className="border-gray-200" />
 
-        {/* Section 3: Filters (Optional) */}
         <div className="space-y-3">
           <button
             onClick={() => setIsFiltersOpen(!isFiltersOpen)}
@@ -116,7 +111,6 @@ export const SearchForm = () => {
 
           {isFiltersOpen && (
             <div className="space-y-4 mt-4 pt-4 border-t border-gray-200">
-              {/* Language filter */}
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">
                   Languages
@@ -149,7 +143,6 @@ export const SearchForm = () => {
                 )}
               </div>
 
-              {/* Stars slider */}
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">
                   Repository Stars: {searchParams.minStars} -{" "}
@@ -179,7 +172,6 @@ export const SearchForm = () => {
                 </div>
               </div>
 
-              {/* Label filters */}
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">
                   Issue Labels
@@ -207,7 +199,6 @@ export const SearchForm = () => {
 
         <hr className="border-gray-200" />
 
-        {/* Submit button */}
         <button
           onClick={handleSearch}
           disabled={isSearchDisabled}

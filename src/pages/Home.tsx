@@ -49,11 +49,9 @@ export const Home = () => {
 
   return (
     <div className="w-full">
-      {/* Hero section */}
       <section className="min-h-screen bg-linear-to-br from-brand-50 to-accent-50 flex items-center py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left side - Text */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -69,7 +67,6 @@ export const Home = () => {
                 contributions that fit your skills and experience level.
               </p>
 
-              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
                 <Link
                   to="/search"
@@ -92,7 +89,6 @@ export const Home = () => {
                 </Link>
               </div>
 
-              {/* Stats bar */}
               <div className="pt-8 border-t border-gray-300">
                 <p className="text-sm text-gray-600 font-medium">
                   10,000+ Issues Analyzed · 50+ Languages · 100% Free
@@ -100,7 +96,6 @@ export const Home = () => {
               </div>
             </motion.div>
 
-            {/* Right side - Animated illustration */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -108,7 +103,6 @@ export const Home = () => {
               className="hidden lg:flex items-center justify-center"
             >
               <div className="relative w-full max-w-md h-96">
-                {/* Animated background circles */}
                 <motion.div
                   className="absolute inset-0 bg-linear-to-br from-brand-200 to-accent-200 rounded-3xl opacity-20"
                   animate={{
@@ -120,7 +114,6 @@ export const Home = () => {
                   }}
                 />
 
-                {/* Code bracket animation */}
                 <motion.div
                   className="absolute top-20 left-10 text-6xl font-bold text-brand-500 opacity-30"
                   animate={{
@@ -134,7 +127,6 @@ export const Home = () => {
                   {"<"}
                 </motion.div>
 
-                {/* GitHub icon animation */}
                 <motion.div
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                   animate={{
@@ -153,7 +145,6 @@ export const Home = () => {
                   />
                 </motion.div>
 
-                {/* Code bracket animation */}
                 <motion.div
                   className="absolute bottom-20 right-10 text-6xl font-bold text-blue-500 opacity-30"
                   animate={{
@@ -167,7 +158,6 @@ export const Home = () => {
                   {">"}
                 </motion.div>
 
-                {/* Decorative dots */}
                 <motion.div className="absolute top-10 right-20 w-4 h-4 bg-brand-500 rounded-full opacity-60" />
                 <motion.div className="absolute bottom-32 left-20 w-3 h-3 bg-blue-500 rounded-full opacity-60" />
               </div>
@@ -176,7 +166,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Features section */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -222,7 +211,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* How it works section */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-accent-50 to-brand-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -250,13 +238,11 @@ export const Home = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                {/* Connector line */}
                 {idx < steps.length - 1 && (
                   <div className="hidden md:block absolute top-20 left-[calc(100%)] w-full h-1 bg-linear-to-r from-brand-400 to-transparent" />
                 )}
 
                 <div className="bg-white border border-gray-200 rounded-lg p-8 h-full">
-                  {/* Step number */}
                   <div className="w-12 h-12 bg-linear-to-br from-brand-500 to-accent-500 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
                     {step.number}
                   </div>
@@ -274,7 +260,6 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* CTA section */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <motion.div

@@ -16,7 +16,6 @@ export const useGitHub = () => {
         const detectedSkills = response.data.skills;
         const skillCount = detectedSkills.length;
 
-        // Update user skills in store
         if (user) {
           setUser({
             ...user,

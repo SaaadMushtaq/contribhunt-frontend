@@ -26,7 +26,6 @@ export const Search = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Mark as searched as soon as a search begins
   useEffect(() => {
     if (isSearching) setHasSearched(true);
   }, [isSearching]);
@@ -41,16 +40,13 @@ export const Search = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-4">
               <SearchForm />
             </div>
           </div>
 
-          {/* Results panel */}
           <div className="lg:col-span-2 space-y-4">
-            {/* View mode toggle — only when results exist */}
             {showResults && searchResults.length > 0 && (
               <div className="flex items-center gap-1 bg-white border border-gray-200 rounded-xl p-1 w-fit shadow-sm">
                 <button
@@ -100,7 +96,6 @@ export const Search = () => {
                   />
                 )
               ) : (
-                /* Only shown before the very first search */
                 <div className="bg-white border border-gray-200 rounded-xl p-14 text-center shadow-sm">
                   <div className="w-16 h-16 bg-brand-50 rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-inner">
                     <SearchIcon size={30} className="text-brand-500" />

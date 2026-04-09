@@ -39,7 +39,6 @@ export const Roadmap = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-8 print:bg-white print:py-4">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        {/* Header */}
         <div className="flex items-center justify-between flex-wrap gap-4 print:hidden">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">
@@ -68,7 +67,6 @@ export const Roadmap = () => {
           </div>
         </div>
 
-        {/* Print header (only visible when printing) */}
         <div className="hidden print:block mb-6">
           <h1 className="text-2xl font-bold text-gray-900">
             ContribHunt — Contribution Roadmap
@@ -79,7 +77,6 @@ export const Roadmap = () => {
           </p>
         </div>
 
-        {/* Roadmap view */}
         <RoadmapView
           issues={searchResults}
           onTrack={isAuthenticated ? trackIssue : undefined}

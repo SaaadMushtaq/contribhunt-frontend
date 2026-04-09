@@ -105,7 +105,6 @@ export const RoadmapView = ({
 
   return (
     <div className="space-y-6">
-      {/* View mode toggle */}
       {onViewModeChange && (
         <div className="flex justify-end">
           <button
@@ -117,7 +116,6 @@ export const RoadmapView = ({
         </div>
       )}
 
-      {/* Roadmap phases */}
       <div className="space-y-6">
         {PHASES.map((phase) => {
           const phaseIssues = getIssuesForPhase(phase);
@@ -130,7 +128,6 @@ export const RoadmapView = ({
               animate={{ opacity: 1 }}
               className="space-y-3"
             >
-              {/* Phase header */}
               <button
                 onClick={() => togglePhase(phase.id)}
                 className={`w-full p-4 rounded-lg border-2 ${getPhaseColor(phase.color)} transition-all hover:shadow-md`}
@@ -170,15 +167,12 @@ export const RoadmapView = ({
                 </div>
               </button>
 
-              {/* Phase timeline issues */}
               {isExpanded && phaseIssues.length > 0 && (
                 <div className="relative space-y-4 pl-8">
-                  {/* Timeline line */}
                   <div
                     className={`absolute left-3 top-0 bottom-0 w-1 ${getTimelineColor(phase.color)} rounded-full`}
                   />
 
-                  {/* Issues */}
                   <motion.div
                     initial="hidden"
                     animate="visible"
@@ -199,12 +193,10 @@ export const RoadmapView = ({
                         transition={{ delay: issueIdx * 0.05 }}
                         className="relative"
                       >
-                        {/* Timeline dot */}
                         <div
                           className={`absolute -left-12 top-6 w-4 h-4 rounded-full border-4 border-white ${getTimelineColor(phase.color)} shadow-md`}
                         />
 
-                        {/* Issue card */}
                         <IssueCard issue={issue} onTrack={onTrack} />
                       </motion.div>
                     ))}
@@ -212,7 +204,6 @@ export const RoadmapView = ({
                 </div>
               )}
 
-              {/* Empty phase */}
               {isExpanded && phaseIssues.length === 0 && (
                 <div className="text-center py-8 text-gray-500">
                   <p>No issues in this phase yet.</p>
@@ -223,7 +214,6 @@ export const RoadmapView = ({
         })}
       </div>
 
-      {/* Summary */}
       {issues.length === 0 && (
         <div className="bg-white border border-gray-200 rounded-lg p-8 text-center">
           <p className="text-gray-600">

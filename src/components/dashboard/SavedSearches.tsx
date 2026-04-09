@@ -40,12 +40,10 @@ export const SavedSearches = ({
         >
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1 min-w-0">
-              {/* Search name */}
               <h3 className="font-semibold text-gray-900 mb-2 truncate">
                 {search.name}
               </h3>
 
-              {/* Skills badges */}
               <div className="flex flex-wrap gap-2 mb-3">
                 {search.params.skills.slice(0, 3).map((skill) => (
                   <span
@@ -62,7 +60,6 @@ export const SavedSearches = ({
                 )}
               </div>
 
-              {/* Experience level and date */}
               <div className="flex items-center gap-2 flex-wrap text-xs text-gray-600">
                 <span className="px-2 py-1 bg-gray-100 rounded capitalize">
                   {search.params.experienceLevel}
@@ -72,7 +69,6 @@ export const SavedSearches = ({
               </div>
             </div>
 
-            {/* Actions */}
             <div className="flex items-center gap-2 shrink-0">
               <button
                 onClick={() => onLoad(search.params)}
